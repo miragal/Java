@@ -1,0 +1,54 @@
+package my;
+import java.awt.*;
+import javax.swing.*;
+public class Display extends JFrame {
+	private DescriptionPanel dp=new DescriptionPanel();
+	public Display(){
+		dp.setTitle("一条狗的使命");
+		String des="一条狗的使命\n\n"+"影片讲述了一条狗经历多次重生，在一次次生命的轮回中寻找不同的使命，最后又回到了最初的主人身边的故事。";
+		dp.setDescription(des);
+		dp.setImageIcon(new ImageIcon("1.jpg"));
+		setLayout(new BorderLayout());
+		add(dp,BorderLayout.SOUTH);
+	}
+	public static void main (String[] args){
+		Display frame=new Display();
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}
+
+class DescriptionPanel extends JPanel{
+	private JLabel jit=new JLabel();
+	private JTextArea jd=new JTextArea();
+	public DescriptionPanel(){
+		jit.setHorizontalAlignment(JLabel.CENTER);
+		jit.setHorizontalTextPosition(JLabel.CENTER);
+		jit.setVerticalAlignment(JLabel.BOTTOM);
+		
+		jit.setFont(new Font("ScansSerif",Font.BOLD,16));
+		jd.setFont(new Font("Serif",Font.PLAIN,14));
+		
+		jd.setLineWrap(true);
+		jd.setWrapStyleWord(true);
+		jd.setEditable(false);
+		
+		JScrollPane sl=new JScrollPane(jd);
+		
+		setLayout(new BorderLayout(5,5));
+		add(sl,BorderLayout.CENTER);
+		add(jit,BorderLayout.WEST);
+	}
+	
+	public void setTitle(String t){
+		jit.setText(t);
+	}
+	public void setImageIcon(ImageIcon i){
+		jit.setIcon(i);
+	}
+	public void setDescription(String t){
+		jd.setText(t);
+	}
+}

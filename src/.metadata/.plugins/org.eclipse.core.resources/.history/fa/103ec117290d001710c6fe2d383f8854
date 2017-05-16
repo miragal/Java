@@ -1,0 +1,43 @@
+package ttms;
+
+import java.awt.*;
+import javax.swing.*;
+public class Display {
+	GridBagConstraints gbc=new GridBagConstraints();  
+    JMenuBar menubar1 = new JMenuBar();  
+    JMenu j1=new JMenu("票务管理");  
+    JMenu j2=new JMenu("会员管理");  
+    JMenu j3=new JMenu("信息服务");  
+    JMenu j4=new JMenu("用户设置");  
+    JMenuItem menu1Item1=new JMenuItem("售票");  
+    JMenuItem menu1Item2=new JMenuItem("退票");  
+    JMenuItem menu2Item1=new JMenuItem("会员注册");  
+    JMenuItem menu2Item2=new JMenuItem("信息管理");  
+    JMenuItem menu5Item1=new JMenuItem("版本信息");  
+    JMenuItem menu5Item2=new JMenuItem("使用帮助");  
+    JMenuItem menu6Item1=new JMenuItem("修改密码");  
+    JFrame jf=new JFrame("剧院票务管理系统");  
+    static JPanel jp=new JPanel(new GridLayout(1,1));  
+    Toolkit kit=Toolkit.getDefaultToolkit();  
+    Dimension  screeSize=kit.getScreenSize();  
+    static JScrollPane  js;  
+    Display(){  
+         j1.add(menu1Item1);  
+         j1.add(menu1Item2);  
+         j2.add(menu2Item1);  
+         j2.add(menu2Item2);  
+         j3.add(menu5Item1);  
+         j4.add(menu5Item2);  
+         j4.add(menu6Item1);   
+         menubar1.add(j1);  
+         menubar1.add(j2);  
+         menubar1.add(j3);  
+         menubar1.add(j4);  
+         jf.setJMenuBar(menubar1);  
+         jf.add(jp);  
+         jf.setSize(screeSize.width, screeSize.height);  
+         jf.setVisible(true);  
+         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        
+    }  
+}

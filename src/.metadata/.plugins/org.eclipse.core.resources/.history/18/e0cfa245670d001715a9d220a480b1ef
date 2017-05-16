@@ -1,0 +1,39 @@
+package my;
+import java.awt.*;
+import javax.swing.*;
+public class Display {
+	
+}
+
+class DescriptionPanel extends JPanel{
+	private JLabel jit=new JLabel();
+	private JTextArea jd=new JTextArea();
+	public DescriptionPanel(){
+		jit.setHorizontalAlignment(JLabel.CENTER);
+		jit.setHorizontalTextPosition(JLabel.CENTER);
+		jit.setVerticalAlignment(JLabel.BOTTOM);
+		
+		jit.setFont(new Font("ScansSerif",Font.BOLD,16));
+		jd.setFont(new Font("Serif",Font.PLAIN,14));
+		
+		jd.setLineWrap(true);
+		jd.setWrapStyleWord(true);
+		jd.setEditable(false);
+		
+		JScrollPane sl=new JScrollPane(jd);
+		
+		setLayout(new BorderLayout(5,5));
+		add(sl,BorderLayout.CENTER);
+		add(jit,BorderLayout.WEST);
+	}
+	
+	public void setTitle(String t){
+		jit.setText(t);
+	}
+	public void setImageIcon(ImageIcon i){
+		jit.setIcon(i);
+	}
+	public void setDescription(String t){
+		jd.setText(t);
+	}
+}
